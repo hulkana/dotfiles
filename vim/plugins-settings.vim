@@ -5,7 +5,7 @@ let g:airline_powerline_fonts = 1
 
 " undotree
 if has("persistent_undo")
-    set undodir=$HOME."/.undodir"
+    set undodir=$HOME"/.undodir"
     set undofile
 endif
 
