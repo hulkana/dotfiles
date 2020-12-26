@@ -5,11 +5,13 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # colorls - https://github.com/athityakumar/colorls
 alias lc='colorls -lA --sd'
 alias ls=lc
+
 # Use Neovim if it is available
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
+# set path to vimrc
 export MYVIMRC="~/.config/nvim/init.vim"
 
 # visualing pretty ping

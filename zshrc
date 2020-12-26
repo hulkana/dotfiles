@@ -22,28 +22,28 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  asdf
-  battery
-  brew
-  bundler
-  copydir
-  copybuffer
-  copyfile
-  extract
-  fzf
-  git
-  gem
-  npm
-  osx
-  rails
-  rake
-  redis-cli
-  thefuck
-  tmux
-  urltools
+  # git
+  # asdf
+  # battery
+  # brew
+  # bundler
+  # copydir
+  # copybuffer
+  # copyfile
+  # extract
+  # fzf
+  # git
+  # gem
+  # npm
+  # osx
+  # rails
+  # rake
+  # redis-cli
+  # thefuck
+  # tmux
+  # urltools
   zsh_reload
-  zsh-interactive-cd
+  # zsh-interactive-cd
   fasd
 )
 
@@ -85,6 +85,7 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # homebrew
 export PATH="/usr/local/sbin:$PATH"
@@ -92,8 +93,10 @@ export PATH="/usr/local/sbin:$PATH"
 # fasd
 eval "$(fasd --init auto)"
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # thefuck 
 eval $(thefuck --alias)
+
+# fzf and ag
+export FZF_DEFAULT_COMMAND=''
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

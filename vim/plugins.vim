@@ -8,14 +8,20 @@ Plug 'rakr/vim-one'
 
 " GENERAL
 Plug 'preservim/nerdtree'
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoDeleteBuffer=1
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+set rtp+=/usr/local/opt/fzf
+
 Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='murmur' 
+let g:airline_powerline_fonts = 1
 
 Plug 'sheerun/vim-polyglot'
 
@@ -28,9 +34,15 @@ Plug 'myusuf3/numbers.vim'
 
 Plug 'kien/rainbow_parentheses.vim'
 
+Plug 'easymotion/vim-easymotion'
+
 
 " EDITING
 Plug 'mbbill/undotree'
+if has("persistent_undo")
+    set undodir=$HOME"/.undodir"
+    set undofile
+endif
 
 Plug 'machakann/vim-highlightedyank'
 
